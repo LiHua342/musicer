@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musicer - 音乐播放器</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="player-container" id="playerContainer">
+    <header class="player-header">
+      <h1 class="player-title">🎵 Musicer</h1>
+    </header>
+
+    <section class="cover-section">
+      <div class="cover-wrapper" id="coverWrapper">
+        <img class="cover-image" id="coverImage" src="assets/default-cover.svg" alt="专辑封面">
+        <div class="cover-overlay" id="coverOverlay"></div>
+      </div>
+      <div class="track-info" id="trackInfo">
+        <h2 class="track-title" id="trackTitle">未选择歌曲</h2>
+        <p class="track-artist" id="trackArtist">请导入或选择音乐开始播放</p>
+      </div>
+    </section>
+
+    <section class="progress-section">
+      <span class="time-current" id="timeCurrent">00:00</span>
+      <div class="progress-bar" id="progressBar">
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+          <div class="progress-thumb" id="progressThumb"></div>
+        </div>
+      </div>
+      <span class="time-duration" id="timeDuration">00:00</span>
+    </section>
+
+    <section class="controls-section">
+      <div class="controls-main">
+        <button class="btn-control btn-mode" id="btnShuffle" title="随机播放">🔀</button>
+        <button class="btn-control btn-prev" id="btnPrev" title="上一首">⏮</button>
+        <button class="btn-control btn-play" id="btnPlay" title="播放/暂停">
+          <span class="icon-play">▶</span>
+        </button>
+        <button class="btn-control btn-next" id="btnNext" title="下一首">⏭</button>
+        <button class="btn-control btn-mode" id="btnRepeat" title="列表循环">🔁</button>
+      </div>
+      <div class="controls-volume">
+        <button class="btn-volume-icon" id="btnVolumeIcon" title="静音">🔊</button>
+        <div class="volume-slider" id="volumeSlider">
+          <div class="volume-track">
+            <div class="volume-fill" id="volumeFill"></div>
+            <div class="volume-thumb" id="volumeThumb"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="import-section">
+      <button class="btn-import" id="btnImport">
+        <span class="btn-import-icon">📂</span>
+        <span>导入音乐</span>
+      </button>
+      <input type="file" id="fileInput" accept="audio/*" multiple hidden>
+      <p class="import-hint">支持 MP3、WAV、OGG、FLAC 格式，也可拖拽文件到此处</p>
+    </section>
+
+    <section class="playlist-section">
+      <div class="playlist-header">
+        <h3>播放列表</h3>
+        <button class="btn-clear" id="btnClear" title="清空列表">清空</button>
+      </div>
+      <ul class="playlist" id="playlist">
+        <li class="playlist-empty" id="playlistEmpty">
+          <span class="empty-icon">🎶</span>
+          <span>列表为空，导入音乐开始享受吧</span>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="player-footer">
+      <span class="footer-count" id="footerCount">共 0 首</span>
+      <span class="footer-separator">|</span>
+      <span class="footer-mode" id="footerMode">列表循环</span>
+    </footer>
+  </div>
+
+  <audio id="audioPlayer" preload="auto"></audio>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
