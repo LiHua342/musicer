@@ -2,3 +2,13 @@ node_modules/
 .DS_Store
 Thumbs.db
 *.log
+
+# 本地文档，不推送
+进度记录.md
+项目计划书.md
+部署指南.md
+server.ps1
+do_push.ps1
+push_error.txt
+push_result.txt
+push_exitcode.txt
